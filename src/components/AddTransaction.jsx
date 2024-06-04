@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaPlus } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTransactionAction } from '../store/transactionSlice';
 
 
 
@@ -7,6 +9,10 @@ function AddTransaction() {
 
     const [text, setText] = useState('');
     const [amount, setAmount] = useState(0);
+    const {transactions} = useSelector(state => state.transactionStore);
+
+
+    const dispatch = useDispatch();
 
 
 
@@ -37,6 +43,7 @@ function AddTransaction() {
                 />
             </div>
             <button 
+                onClick={() => dispatch(addTransactionAction({text, amount}))}
                 type="submit" 
                 className="w-full py-3 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-200 transition-all duration-300 flex items-center justify-center"
             >

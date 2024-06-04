@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaTrashAlt } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import TransactionComponent from './TransactionComponent';
 
