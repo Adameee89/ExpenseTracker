@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaTrashAlt } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteTransactionAction } from '../store/transactionSlice';
@@ -6,8 +6,14 @@ import { deleteTransactionAction } from '../store/transactionSlice';
 function TransactionComponent({transaction}) {
 
   const {transactions} = useSelector(state => state.transactionStore);
+  const [addTransaction, setTransaction] = useState()
 
   const dispatch = useDispatch();
+
+  
+  useEffect(() => {
+    setTransaction( JSON.parse(localStorage.getItem('transactions')))
+  }, [transactions])
 
 
 
