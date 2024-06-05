@@ -3,20 +3,18 @@ import {createSlice} from '@reduxjs/toolkit';
 const transactionSlice = createSlice({
     name: 'transaction',
     initialState: {
-        transactions: [
-            {id: 1, text: 'Flower', amount: -20},
-            {id: 2, text: 'Salary', amount: 300},
-            {id: 3, text: 'Book', amount: -10},
-            {id: 4, text: 'Camera', amount: 150},
-        ],
+        transactions: []
     },
     reducers: {
 
         addTransactionAction: (state, action) => {
-            state.transactions.push(action.payload);
+            console.log(action.payload);
+            state.transactions = [...state.transactions, action.payload];
         }, 
         deleteTransactionAction: (state, action) => {
             state.transactions = state.transactions.filter(transaction => transaction.id !== action.payload);
+
+            localStorage.setItem('transactions', JSON.stringify(state.transactions));
         } 
         
        
