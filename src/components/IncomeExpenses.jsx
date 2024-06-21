@@ -19,19 +19,19 @@ function IncomeExpenses() {
 
 
   return (
-    <div className="flex justify-between bg-white shadow-2xl p-6 rounded-xl transition-transform transform hover:scale-105">
-        <div className="w-1/2 pr-6 border-r">
+    <div className=" flex  justify-between bg-white shadow-2xl p-6 rounded-xl transition-transform transform hover:scale-105">
+        <div className="w-1/2  pr-6 border-r">
             <h4 className="text-2xl font-bold mb-2 text-green-500 flex items-center">
                 <FaArrowUp className="mr-2" /> Income
             </h4>
-            <p className="text-3xl">+${income}</p>
+            <p className="text-lg font-medium md:text-2xl lg:text-2xl">+${income}</p>
         </div>
 
         <div className="w-1/2 pl-6">
             <h4 className="text-2xl font-bold mb-2 text-red-500 flex items-center">
                 <FaArrowDown className="mr-2" /> Expense
             </h4>
-            <p className="text-3xl">-${expense}</p>
+            <p className="text-lg font-medium md:text-2xl lg:text-2xl">-${expense}</p>
         </div>
     </div>
   )
